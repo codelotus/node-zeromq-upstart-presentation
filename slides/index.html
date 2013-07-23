@@ -37,24 +37,60 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>Distributed and Fault</h1>
+                    <h1>Tollerant Node.js</h1>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Presented by Brian Ehmann / <a href="http://twitter.com/codelotus">@codelotus</a></small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
+					<h2>Let me start by telling you a little about myself...</h2>
+					<p class="fragment">
+                    begins many of the cheesier presentations you'll suffer.<br/>
+                    - Merlin Mann
 					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
 				</section>
+
+                <section>
+                    <h2>Let's talk about ZeroMQ</h2>
+                </section>
+
+                <section>
+                    <p>
+                    Sockets on steroids...
+                    </p>
+                </section>
+
+                <section>
+                    Makes complex message passing simple
+                </section>
+                
+                <section>
+					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+
+    var zmq = require('zmq')
+      , server_socket = zmq.socket('rep')
+      , client_socket = zmq.socket('req');
+    
+    exports.server = function() {
+      server_socket.bindSync('tcp://localhost:5890');
+      server_socket.on('message', function(msg){
+        server_socket.send(msg.toString() + " World!!");
+      });
+    };
+    
+    exports.client = function() {
+      client_socket.connect('tcp://localhost:5890');
+      client_socket.send('Hello');
+      client_socket.on('message', function(msg) {
+        console.log('msg: %s', msg.toString());
+      });
+    }
+                    </code> </pre>
+                </section>
+
+
 
 				<!-- Example of nested vertical slides -->
 				<section>
