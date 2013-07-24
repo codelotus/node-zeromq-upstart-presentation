@@ -4,10 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<title>Distributed Node</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -53,6 +50,27 @@
 				</section>
 
                 <section>
+                    <h2>Motivation for this talk...</h2>
+				    <img width="600" height="300" src="images/letitcrash.png" alt="Let it crash">
+                </section>
+
+                <section>
+                    <img width="500" height="367" src="images/chaosmonkey.jpg" alt="Chaos Monkey">
+                </section>
+
+                <section>
+                    <img width="320" height="240" src="images/twitter_storm.jpg" alt="Twitter Storm">
+                </section>
+
+                <section>
+                    <img width="643" height="453" src="images/topology.png" alt="Topology">
+                </section>
+
+                <section>
+                    <img width="381" height="119" src="images/zmq_logo.gif" alt="ZMQ">
+                </section>
+
+                <section>
                     <h2>Let's talk about ZeroMQ</h2>
                 </section>
 
@@ -60,36 +78,164 @@
                     <p>
                     Sockets on steroids...
                     </p>
+                    <img width="600" height="250" src="images/boom_sockets.png" alt="Boom Sockets">
                 </section>
 
                 <section>
                     Makes complex message passing simple
                 </section>
+
+                <section>
+                    <h3>Transport Options</h3>
+                    <ol>
+                        <li>
+                            <p>Unicast</p>
+                            <ul>
+                                <li>tcp://*:5556 </li>
+                                <li>ipc://netflow.ipc</li>
+                                <li>inproc://fastjob</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Multicast</p>
+                            <ul>
+                                <li>pgm</li>
+                                <li>epgm</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
                 
                 <section>
+                    <h3>Request / Response</h3>
 					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 
     var zmq = require('zmq')
-      , server_socket = zmq.socket('rep')
-      , client_socket = zmq.socket('req');
+      , req_socket = zmq.socket('req')
+      , rep_socket = zmq.socket('rep');
     
-    exports.server = function() {
-      server_socket.bindSync('tcp://localhost:5890');
-      server_socket.on('message', function(msg){
-        server_socket.send(msg.toString() + " World!!");
+    exports.response = function() {
+      rep_socket.bindSync('tcp://localhost:5890');
+      rep_socket.on('message', function(msg){
+        rep_socket.send(msg.toString() + " World!!");
       });
     };
     
-    exports.client = function() {
-      client_socket.connect('tcp://localhost:5890');
-      client_socket.send('Hello');
-      client_socket.on('message', function(msg) {
+    exports.request = function() {
+      req_socket.connect('tcp://localhost:5890');
+      req_socket.send('Hello');
+      req_socket.on('message', function(msg) {
         console.log('msg: %s', msg.toString());
       });
     }
                     </code> </pre>
                 </section>
 
+
+                <section>
+                    <h3>Publish / Subscribe</h3>
+                    <img width="550" height="275" src="images/pub_sub.png" alt="Pub Sub">
+                </section>
+
+                <section>
+                    <h4>Publish / Subscribe</h4>
+					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+    var zmq = require('zmq')
+      , pub_socket = zmq.socket('pub')
+      , sub_socket = zmq.socket('sub')
+      , filter = 'pubsub';
+    
+    exports.sub = function() {
+      sub_socket.subscribe(filter);
+      sub_socket.connect('tcp://127.0.0.1:3000');
+      sub_socket.on('message', function(msg) {
+        console.log('work: %s', msg.toString());
+      });
+    };
+    
+    exports.pub = function() {
+      pub_socket.bind('tcp://127.0.0.1:3000', function() {
+        pub_socket.send("pubsub work");
+        pub_socket.send("bogus work");
+      });
+    }
+                    </code> </pre>
+                </section>
+
+                <section>
+                    <h3>Push / Pull</h3>
+                    <img width="400" height="475" src="images/push_pull.png" alt="Push Pull">
+                </section>
+
+                <section>
+                    <h3>Push / Pull</h3>
+					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+        var zmq = require('zmq')
+          , push_socket = zmq.socket('push')
+          , pull_socket = zmq.socket('pull');
+        
+        exports.push = function() {
+          push_socket.bindSync('tcp://127.0.0.1:3000');
+          push_socket.send("some work");
+        };
+        
+        exports.pull = function() {
+          pull_socket.connect('tcp://127.0.0.1:3000');
+          pull_socket.on('message', function(msg) {
+            console.log('work: %s', msg.toString());
+          });
+        }
+                    </code> </pre>
+                </section>
+
+                <section>
+                    <h3>Through a Proxy</h3>
+                    <img width="400" height="475" src="images/proxy_pub_sub.png" alt="Push Pull">
+                </section>
+
+                <section>
+                    <h3>Broker</h3>
+                    <img width="400" height="475" src="images/router_dealer.png" alt="Push Pull">
+                </section>
+
+                <section>
+                    <h3>Broker</h3>
+					<pre> <code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+        var zmq = require('zmq')
+          , frontend = zmq.socket('router')
+          , backend  = zmq.socket('dealer');
+        
+        frontend.bindSync('tcp://*:5559');
+        backend.bindSync('tcp://*:5560');
+        
+        frontend.on('message', function(data) {
+          backend.send(data);
+        });
+        
+        backend.on('message', function(data) {
+          frontend.send(data);
+        });
+                    </code> </pre>
+                </section>
+
+                <section>
+                    <h3>ipc Broker</h3>
+					<pre> <code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+        var zmq = require('zmq')
+          , frontend = zmq.socket('router')
+          , backend  = zmq.socket('dealer')
+          , ipcFrontend = zmq.socket('router')
+          , ipcBackend = zmq.socket('router');
+        
+        ipcFrontend.bindSync('ipc://frontend');
+        ipcBackend.bindSync('ipc://backend');
+        
+        frontend.bindSync('tcp://*:5559');
+        backend.bindSync('tcp://*:5560');
+        // TODO: make this work....
+
+                    </code> </pre>
+                </section>
 
 
 				<!-- Example of nested vertical slides -->
