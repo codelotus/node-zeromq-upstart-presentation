@@ -1,0 +1,2 @@
+ab -n 1 -c 1 -p timesTwo.post -T "application/x-www-form-urlencoded" http://127.0.0.1:3000/timesTwo
+

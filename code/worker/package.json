@@ -1,0 +1,9 @@
+{
+  "name": "primary-frontend",
+  "description": "zeromq worker",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+      "zmq"    : "2.x"
+  }
+}
