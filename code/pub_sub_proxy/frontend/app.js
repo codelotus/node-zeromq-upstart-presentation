@@ -2,7 +2,7 @@
 var express = require('express')
   , zmq = require('zmq')
   , publish_socket = zmq.socket('pub')
-  , address = 'tcp://*:5559';
+  , address = 'tcp://localhost:5559';
 
 var app = express();
 app.use(express.bodyParser());
@@ -21,7 +21,7 @@ app.post('/process', function(req, res) {
 
 app.listen(3000);
 console.log('Listening on port 3000');
-publish_socket.bindSync(address);
+publish_socket.connect(address);
 console.log("publish_socket bound to: ", address);
 
 publish_socket.on('error', function(err) {
