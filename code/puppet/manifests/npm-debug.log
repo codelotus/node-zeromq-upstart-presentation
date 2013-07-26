@@ -1,0 +1,367 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'zmq', '-g' ]
+2 info using npm@1.3.5
+3 info using node@v0.10.15
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'zmq', null ]
+6 verbose cache add name=undefined spec="zmq" args=["zmq",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'zmq',
+7 verbose parsed url   path: 'zmq',
+7 verbose parsed url   href: 'zmq' }
+8 silly lockFile 87107de2-zmq zmq
+9 verbose lock zmq /root/.npm/87107de2-zmq.lock
+10 silly lockFile 87107de2-zmq zmq
+11 silly lockFile 87107de2-zmq zmq
+12 verbose addNamed [ 'zmq', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 6227fbd7-zmq zmq@
+15 verbose lock zmq@ /root/.npm/6227fbd7-zmq.lock
+16 silly addNameRange { name: 'zmq', range: '*', hasData: false }
+17 verbose url raw zmq
+18 verbose url resolving [ 'https://registry.npmjs.org/', './zmq' ]
+19 verbose url resolved https://registry.npmjs.org/zmq
+20 info trying registry request attempt 1 at 23:26:58
+21 http GET https://registry.npmjs.org/zmq
+22 http 200 https://registry.npmjs.org/zmq
+23 silly registry.get cb [ 200,
+23 silly registry.get   { vary: 'Accept',
+23 silly registry.get     server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+23 silly registry.get     etag: '"P7724J9DVIJ8AWSZO9YTPCVE"',
+23 silly registry.get     date: 'Fri, 26 Jul 2013 23:27:00 GMT',
+23 silly registry.get     'content-type': 'application/json',
+23 silly registry.get     'content-length': '30153' } ]
+24 silly addNameRange number 2 { name: 'zmq', range: '*', hasData: true }
+25 silly addNameRange versions [ 'zmq',
+25 silly addNameRange   [ '1.0.0',
+25 silly addNameRange     '1.0.1',
+25 silly addNameRange     '1.0.2',
+25 silly addNameRange     '1.0.3',
+25 silly addNameRange     '1.0.4',
+25 silly addNameRange     '2.0.0',
+25 silly addNameRange     '2.0.1',
+25 silly addNameRange     '2.0.2',
+25 silly addNameRange     '2.0.3',
+25 silly addNameRange     '2.1.0',
+25 silly addNameRange     '2.2.0',
+25 silly addNameRange     '2.3.0',
+25 silly addNameRange     '2.4.0' ] ]
+26 verbose addNamed [ 'zmq', '2.4.0' ]
+27 verbose addNamed [ '2.4.0', '2.4.0' ]
+28 silly lockFile ec109f17-zmq-2-4-0 zmq@2.4.0
+29 verbose lock zmq@2.4.0 /root/.npm/ec109f17-zmq-2-4-0.lock
+30 silly lockFile 82481ec6-stry-npmjs-org-zmq-zmq-2-4-0-tgz https://registry.npmjs.org/zmq/-/zmq-2.4.0.tgz
+31 verbose lock https://registry.npmjs.org/zmq/-/zmq-2.4.0.tgz /root/.npm/82481ec6-stry-npmjs-org-zmq-zmq-2-4-0-tgz.lock
+32 verbose addRemoteTarball [ 'https://registry.npmjs.org/zmq/-/zmq-2.4.0.tgz',
+32 verbose addRemoteTarball   'fdb4814bd3623d70e5af04a96227c63d23034e58' ]
+33 info retry fetch attempt 1 at 23:26:59
+34 verbose fetch to= /root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/tmp.tgz
+35 http GET https://registry.npmjs.org/zmq/-/zmq-2.4.0.tgz
+36 http 200 https://registry.npmjs.org/zmq/-/zmq-2.4.0.tgz
+37 verbose tar unpack /root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/tmp.tgz
+38 silly lockFile 8d685734-19452-0-4983205257449299-package tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/package
+39 verbose lock tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/package /root/.npm/8d685734-19452-0-4983205257449299-package.lock
+40 silly lockFile ac112de1-19452-0-4983205257449299-tmp-tgz tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/tmp.tgz
+41 verbose lock tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/tmp.tgz /root/.npm/ac112de1-19452-0-4983205257449299-tmp-tgz.lock
+42 silly gunzTarPerm modes [ '755', '644' ]
+43 silly gunzTarPerm extractEntry package.json
+44 silly gunzTarPerm extractEntry .npmignore
+45 silly gunzTarPerm extractEntry README.md
+46 silly gunzTarPerm extractEntry LICENSE
+47 silly gunzTarPerm extractEntry index.js
+48 silly gunzTarPerm extractEntry docs/menu.js
+49 silly gunzTarPerm extractEntry docs/highlight.js
+50 silly gunzTarPerm extractEntry docs/template.jade
+51 silly gunzTarPerm extractEntry docs/style.css
+52 silly gunzTarPerm extractEntry docs/index.json
+53 silly gunzTarPerm extractEntry docs/index.html
+54 silly gunzTarPerm extractEntry lib/index.js
+55 silly gunzTarPerm extractEntry binding.cc
+56 silly gunzTarPerm extractEntry windows/lib/x86/libzmq-v100-mt-3_2_2.lib
+57 silly gunzTarPerm extractEntry windows/lib/x86/libzmq-v100-mt-3_2_2.dll
+58 silly gunzTarPerm extractEntry windows/lib/x64/libzmq-v100-mt-3_2_2.lib
+59 silly gunzTarPerm extractEntry windows/lib/x64/libzmq-v100-mt-3_2_2.dll
+60 silly gunzTarPerm extractEntry windows/include/zmq_utils.h
+61 silly gunzTarPerm extractEntry windows/include/zmq.h
+62 silly gunzTarPerm extractEntry perf/remote_thr.js
+63 silly gunzTarPerm extractEntry perf/local_lat.js
+64 silly gunzTarPerm extractEntry perf/remote_lat.js
+65 silly gunzTarPerm extractEntry perf/local_thr.js
+66 silly gunzTarPerm extractEntry Makefile
+67 silly gunzTarPerm extractEntry binding.gyp
+68 silly gunzTarPerm extractEntry examples/dealer_router.js
+69 silly gunzTarPerm extractEntry examples/router_dealer.js
+70 silly gunzTarPerm extractEntry examples/rep_req.js
+71 silly gunzTarPerm extractEntry examples/rpc.js
+72 silly gunzTarPerm extractEntry examples/push_pull.js
+73 silly gunzTarPerm extractEntry examples/pub_sub.js
+74 silly gunzTarPerm extractEntry examples/req_rep.js
+75 silly gunzTarPerm extractEntry examples/workers/worker.js
+76 silly gunzTarPerm extractEntry examples/workers/producer.js
+77 silly gunzTarPerm extractEntry examples/devices/forwarder.js
+78 silly gunzTarPerm extractEntry examples/devices/streamer.js
+79 silly gunzTarPerm extractEntry examples/devices/queue.js
+80 silly gunzTarPerm extractEntry .travis.yml
+81 silly gunzTarPerm extractEntry History.md
+82 silly gunzTarPerm extractEntry test/run.js
+83 silly gunzTarPerm extractEntry test/test.socket.multipart.sndmore.js
+84 silly gunzTarPerm extractEntry test/test.socket.events.js
+85 silly gunzTarPerm extractEntry test/test.socket.messages.js
+86 silly gunzTarPerm extractEntry test/test.gc.js
+87 silly gunzTarPerm extractEntry test/test.socket.pub-sub.js
+88 silly gunzTarPerm extractEntry test/test.exports.js
+89 silly gunzTarPerm extractEntry test/test.socket.pub-sub.filter.js
+90 silly gunzTarPerm extractEntry test/test.socket.req-rep.multiple.js
+91 silly gunzTarPerm extractEntry test/test.socket.multipart.message.js
+92 silly gunzTarPerm extractEntry test/test.socket.router.unroutable.js
+93 silly gunzTarPerm extractEntry test/test.socket.js
+94 silly gunzTarPerm extractEntry test/test.socket.req-rep.js
+95 silly lockFile 8d685734-19452-0-4983205257449299-package tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/package
+96 silly lockFile 8d685734-19452-0-4983205257449299-package tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/package
+97 silly lockFile ac112de1-19452-0-4983205257449299-tmp-tgz tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/tmp.tgz
+98 silly lockFile ac112de1-19452-0-4983205257449299-tmp-tgz tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/tmp.tgz
+99 verbose tar pack [ '/root/.npm/zmq/2.4.0/package.tgz',
+99 verbose tar pack   '/root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/package' ]
+100 verbose tarball /root/.npm/zmq/2.4.0/package.tgz
+101 verbose folder /root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/package
+102 silly lockFile 8d685734-19452-0-4983205257449299-package tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/package
+103 verbose lock tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/package /root/.npm/8d685734-19452-0-4983205257449299-package.lock
+104 silly lockFile 7047e34d-r-root-npm-zmq-2-4-0-package-tgz tar:///root/.npm/zmq/2.4.0/package.tgz
+105 verbose lock tar:///root/.npm/zmq/2.4.0/package.tgz /root/.npm/7047e34d-r-root-npm-zmq-2-4-0-package-tgz.lock
+106 silly lockFile 8d685734-19452-0-4983205257449299-package tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/package
+107 silly lockFile 8d685734-19452-0-4983205257449299-package tar:///root/tmp/npm-9154-L8AU6OkZ/1374881219452-0.4983205257449299/package
+108 silly lockFile 7047e34d-r-root-npm-zmq-2-4-0-package-tgz tar:///root/.npm/zmq/2.4.0/package.tgz
+109 silly lockFile 7047e34d-r-root-npm-zmq-2-4-0-package-tgz tar:///root/.npm/zmq/2.4.0/package.tgz
+110 silly lockFile 2c02cc21-root-npm-zmq-2-4-0-package /root/.npm/zmq/2.4.0/package
+111 verbose lock /root/.npm/zmq/2.4.0/package /root/.npm/2c02cc21-root-npm-zmq-2-4-0-package.lock
+112 silly lockFile 2c02cc21-root-npm-zmq-2-4-0-package /root/.npm/zmq/2.4.0/package
+113 silly lockFile 2c02cc21-root-npm-zmq-2-4-0-package /root/.npm/zmq/2.4.0/package
+114 verbose tar unpack /root/.npm/zmq/2.4.0/package.tgz
+115 silly lockFile 8415637a-tar-root-npm-zmq-2-4-0-package tar:///root/.npm/zmq/2.4.0/package
+116 verbose lock tar:///root/.npm/zmq/2.4.0/package /root/.npm/8415637a-tar-root-npm-zmq-2-4-0-package.lock
+117 silly lockFile 7047e34d-r-root-npm-zmq-2-4-0-package-tgz tar:///root/.npm/zmq/2.4.0/package.tgz
+118 verbose lock tar:///root/.npm/zmq/2.4.0/package.tgz /root/.npm/7047e34d-r-root-npm-zmq-2-4-0-package-tgz.lock
+119 silly gunzTarPerm modes [ '755', '644' ]
+120 silly gunzTarPerm extractEntry package.json
+121 silly gunzTarPerm extractEntry .npmignore
+122 silly gunzTarPerm extractEntry README.md
+123 silly gunzTarPerm extractEntry LICENSE
+124 silly gunzTarPerm extractEntry index.js
+125 silly gunzTarPerm extractEntry History.md
+126 silly gunzTarPerm extractEntry binding.cc
+127 silly gunzTarPerm extractEntry binding.gyp
+128 silly gunzTarPerm extractEntry .travis.yml
+129 silly gunzTarPerm extractEntry examples/dealer_router.js
+130 silly gunzTarPerm extractEntry examples/pub_sub.js
+131 silly gunzTarPerm extractEntry examples/push_pull.js
+132 silly gunzTarPerm extractEntry examples/rep_req.js
+133 silly gunzTarPerm extractEntry examples/req_rep.js
+134 silly gunzTarPerm extractEntry examples/router_dealer.js
+135 silly gunzTarPerm extractEntry examples/rpc.js
+136 silly gunzTarPerm extractEntry examples/devices/forwarder.js
+137 silly gunzTarPerm extractEntry examples/devices/queue.js
+138 silly gunzTarPerm extractEntry examples/devices/streamer.js
+139 silly gunzTarPerm extractEntry examples/workers/producer.js
+140 silly gunzTarPerm extractEntry examples/workers/worker.js
+141 silly gunzTarPerm extractEntry windows/include/zmq.h
+142 silly gunzTarPerm extractEntry windows/include/zmq_utils.h
+143 silly gunzTarPerm extractEntry windows/lib/x64/libzmq-v100-mt-3_2_2.dll
+144 silly gunzTarPerm extractEntry windows/lib/x64/libzmq-v100-mt-3_2_2.lib
+145 silly gunzTarPerm extractEntry windows/lib/x86/libzmq-v100-mt-3_2_2.dll
+146 silly gunzTarPerm extractEntry windows/lib/x86/libzmq-v100-mt-3_2_2.lib
+147 silly gunzTarPerm extractEntry lib/index.js
+148 silly gunzTarPerm extractEntry Makefile
+149 silly gunzTarPerm extractEntry perf/local_lat.js
+150 silly gunzTarPerm extractEntry perf/local_thr.js
+151 silly gunzTarPerm extractEntry perf/remote_lat.js
+152 silly gunzTarPerm extractEntry perf/remote_thr.js
+153 silly gunzTarPerm extractEntry test/run.js
+154 silly gunzTarPerm extractEntry test/test.socket.events.js
+155 silly gunzTarPerm extractEntry test/test.socket.js
+156 silly gunzTarPerm extractEntry test/test.socket.messages.js
+157 silly gunzTarPerm extractEntry test/test.gc.js
+158 silly gunzTarPerm extractEntry test/test.socket.multipart.sndmore.js
+159 silly gunzTarPerm extractEntry test/test.socket.pub-sub.filter.js
+160 silly gunzTarPerm extractEntry test/test.socket.pub-sub.js
+161 silly gunzTarPerm extractEntry test/test.socket.req-rep.js
+162 silly gunzTarPerm extractEntry test/test.socket.req-rep.multiple.js
+163 silly gunzTarPerm extractEntry test/test.exports.js
+164 silly gunzTarPerm extractEntry test/test.socket.router.unroutable.js
+165 silly gunzTarPerm extractEntry test/test.socket.multipart.message.js
+166 silly gunzTarPerm extractEntry docs/highlight.js
+167 silly gunzTarPerm extractEntry docs/menu.js
+168 silly gunzTarPerm extractEntry docs/index.html
+169 silly gunzTarPerm extractEntry docs/index.json
+170 silly gunzTarPerm extractEntry docs/style.css
+171 silly gunzTarPerm extractEntry docs/template.jade
+172 silly lockFile 8415637a-tar-root-npm-zmq-2-4-0-package tar:///root/.npm/zmq/2.4.0/package
+173 silly lockFile 8415637a-tar-root-npm-zmq-2-4-0-package tar:///root/.npm/zmq/2.4.0/package
+174 silly lockFile 7047e34d-r-root-npm-zmq-2-4-0-package-tgz tar:///root/.npm/zmq/2.4.0/package.tgz
+175 silly lockFile 7047e34d-r-root-npm-zmq-2-4-0-package-tgz tar:///root/.npm/zmq/2.4.0/package.tgz
+176 verbose chmod /root/.npm/zmq/2.4.0/package.tgz 644
+177 verbose chown /root/.npm/zmq/2.4.0/package.tgz [ 0, 0 ]
+178 silly lockFile 82481ec6-stry-npmjs-org-zmq-zmq-2-4-0-tgz https://registry.npmjs.org/zmq/-/zmq-2.4.0.tgz
+179 silly lockFile 82481ec6-stry-npmjs-org-zmq-zmq-2-4-0-tgz https://registry.npmjs.org/zmq/-/zmq-2.4.0.tgz
+180 silly lockFile ec109f17-zmq-2-4-0 zmq@2.4.0
+181 silly lockFile ec109f17-zmq-2-4-0 zmq@2.4.0
+182 silly lockFile 6227fbd7-zmq zmq@
+183 silly lockFile 6227fbd7-zmq zmq@
+184 silly resolved [ { name: 'zmq',
+184 silly resolved     version: '2.4.0',
+184 silly resolved     description: 'Bindings for node.js to zeromq',
+184 silly resolved     main: 'index',
+184 silly resolved     repository:
+184 silly resolved      { type: 'git',
+184 silly resolved        url: 'http://github.com/JustinTulloss/zeromq.node.git' },
+184 silly resolved     devDependencies: { should: '*', batch: '*', jade: '*', dox: '*', semver: '*' },
+184 silly resolved     engines: { node: '>=0.7.9' },
+184 silly resolved     scripts: { test: 'make test', install: 'node-gyp rebuild' },
+184 silly resolved     keywords:
+184 silly resolved      [ 'zeromq',
+184 silly resolved        'zmq',
+184 silly resolved        '0mq',
+184 silly resolved        'ømq',
+184 silly resolved        'libzmq',
+184 silly resolved        'native',
+184 silly resolved        'binding',
+184 silly resolved        'addon' ],
+184 silly resolved     author:
+184 silly resolved      { name: 'Justin Tulloss',
+184 silly resolved        email: 'justin.tulloss@gmail.com',
+184 silly resolved        url: 'http://justin.harmonize.fm' },
+184 silly resolved     contributors:
+184 silly resolved      [ [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object],
+184 silly resolved        [Object] ],
+184 silly resolved     gypfile: true,
+184 silly resolved     readme: '[![Build Status](https://travis-ci.org/JustinTulloss/zeromq.node.png)](https://travis-ci.org/JustinTulloss/zeromq.node)\n\n# node-zeromq\n\n  [ØMQ](http://www.zeromq.org/) bindings for node.js.\n\n## Installation\n\n[Install zmq package](http://www.zeromq.org/intro:get-the-software) first.\n\n    $ npm install zmq\n\n## Example\n\nproducer.js:\n\n```js\nvar zmq = require(\'zmq\')\n  , sock = zmq.socket(\'push\');\n\nsock.bindSync(\'tcp://127.0.0.1:3000\');\nconsole.log(\'Producer bound to port 3000\');\n\nsetInterval(function(){\n  console.log(\'sending work\');\n  sock.send(\'some work\');\n}, 500);\n```\n\nworker.js:\n\n```js\n\nvar zmq = require(\'zmq\')\n  , sock = zmq.socket(\'pull\');\n\nsock.connect(\'tcp://127.0.0.1:3000\');\nconsole.log(\'Worker connected to port 3000\');\n\nsock.on(\'message\', function(msg){\n  console.log(\'work: %s\', msg.toString());\n});\n```\n\n## Running tests\n\n  Install dev deps:\n\n     $ npm install\n\n  Build:\n\n     $ make\n\n  Test:\n\n     $ make test\n',
+184 silly resolved     readmeFilename: 'README.md',
+184 silly resolved     bugs: { url: 'https://github.com/JustinTulloss/zeromq.node/issues' },
+184 silly resolved     _id: 'zmq@2.4.0',
+184 silly resolved     dist: { shasum: 'cf07855c1a20965a3b5294590a39979cbb02079d' },
+184 silly resolved     _from: 'zmq@',
+184 silly resolved     _resolved: 'https://registry.npmjs.org/zmq/-/zmq-2.4.0.tgz' } ]
+185 info install zmq@2.4.0 into /usr/lib
+186 info installOne zmq@2.4.0
+187 info /usr/lib/node_modules/zmq unbuild
+188 verbose tar unpack /root/.npm/zmq/2.4.0/package.tgz
+189 silly lockFile 968254b5-tar-usr-lib-node-modules-zmq tar:///usr/lib/node_modules/zmq
+190 verbose lock tar:///usr/lib/node_modules/zmq /root/.npm/968254b5-tar-usr-lib-node-modules-zmq.lock
+191 silly lockFile 7047e34d-r-root-npm-zmq-2-4-0-package-tgz tar:///root/.npm/zmq/2.4.0/package.tgz
+192 verbose lock tar:///root/.npm/zmq/2.4.0/package.tgz /root/.npm/7047e34d-r-root-npm-zmq-2-4-0-package-tgz.lock
+193 silly gunzTarPerm modes [ '755', '644' ]
+194 silly gunzTarPerm extractEntry package.json
+195 silly gunzTarPerm extractEntry .npmignore
+196 silly gunzTarPerm extractEntry README.md
+197 silly gunzTarPerm extractEntry LICENSE
+198 silly gunzTarPerm extractEntry index.js
+199 silly gunzTarPerm extractEntry History.md
+200 silly gunzTarPerm extractEntry binding.cc
+201 silly gunzTarPerm extractEntry binding.gyp
+202 silly gunzTarPerm extractEntry .travis.yml
+203 silly gunzTarPerm extractEntry examples/dealer_router.js
+204 silly gunzTarPerm extractEntry examples/pub_sub.js
+205 silly gunzTarPerm extractEntry examples/push_pull.js
+206 silly gunzTarPerm extractEntry examples/rep_req.js
+207 silly gunzTarPerm extractEntry examples/req_rep.js
+208 silly gunzTarPerm extractEntry examples/router_dealer.js
+209 silly gunzTarPerm extractEntry examples/rpc.js
+210 silly gunzTarPerm extractEntry examples/devices/forwarder.js
+211 silly gunzTarPerm extractEntry examples/devices/queue.js
+212 silly gunzTarPerm extractEntry examples/devices/streamer.js
+213 silly gunzTarPerm extractEntry examples/workers/producer.js
+214 silly gunzTarPerm extractEntry examples/workers/worker.js
+215 silly gunzTarPerm extractEntry windows/include/zmq.h
+216 silly gunzTarPerm extractEntry windows/include/zmq_utils.h
+217 silly gunzTarPerm extractEntry windows/lib/x64/libzmq-v100-mt-3_2_2.dll
+218 silly gunzTarPerm extractEntry windows/lib/x64/libzmq-v100-mt-3_2_2.lib
+219 silly gunzTarPerm extractEntry windows/lib/x86/libzmq-v100-mt-3_2_2.dll
+220 silly gunzTarPerm extractEntry windows/lib/x86/libzmq-v100-mt-3_2_2.lib
+221 silly gunzTarPerm extractEntry lib/index.js
+222 silly gunzTarPerm extractEntry Makefile
+223 silly gunzTarPerm extractEntry perf/local_lat.js
+224 silly gunzTarPerm extractEntry perf/local_thr.js
+225 silly gunzTarPerm extractEntry perf/remote_lat.js
+226 silly gunzTarPerm extractEntry perf/remote_thr.js
+227 silly gunzTarPerm extractEntry test/run.js
+228 silly gunzTarPerm extractEntry test/test.socket.events.js
+229 silly gunzTarPerm extractEntry test/test.socket.js
+230 silly gunzTarPerm extractEntry test/test.socket.messages.js
+231 silly gunzTarPerm extractEntry test/test.gc.js
+232 silly gunzTarPerm extractEntry test/test.socket.multipart.sndmore.js
+233 silly gunzTarPerm extractEntry test/test.socket.pub-sub.filter.js
+234 silly gunzTarPerm extractEntry test/test.socket.pub-sub.js
+235 silly gunzTarPerm extractEntry test/test.socket.req-rep.js
+236 silly gunzTarPerm extractEntry test/test.socket.req-rep.multiple.js
+237 silly gunzTarPerm extractEntry test/test.exports.js
+238 silly gunzTarPerm extractEntry test/test.socket.router.unroutable.js
+239 silly gunzTarPerm extractEntry test/test.socket.multipart.message.js
+240 silly gunzTarPerm extractEntry docs/highlight.js
+241 silly gunzTarPerm extractEntry docs/menu.js
+242 silly gunzTarPerm extractEntry docs/index.html
+243 silly gunzTarPerm extractEntry docs/index.json
+244 silly gunzTarPerm extractEntry docs/style.css
+245 silly gunzTarPerm extractEntry docs/template.jade
+246 silly lockFile 968254b5-tar-usr-lib-node-modules-zmq tar:///usr/lib/node_modules/zmq
+247 silly lockFile 968254b5-tar-usr-lib-node-modules-zmq tar:///usr/lib/node_modules/zmq
+248 silly lockFile 7047e34d-r-root-npm-zmq-2-4-0-package-tgz tar:///root/.npm/zmq/2.4.0/package.tgz
+249 silly lockFile 7047e34d-r-root-npm-zmq-2-4-0-package-tgz tar:///root/.npm/zmq/2.4.0/package.tgz
+250 info preinstall zmq@2.4.0
+251 verbose readDependencies using package.json deps
+252 verbose readDependencies using package.json deps
+253 silly resolved []
+254 verbose about to build /usr/lib/node_modules/zmq
+255 info build /usr/lib/node_modules/zmq
+256 verbose linkStuff [ true, '/usr/lib/node_modules', true, '/usr/lib/node_modules' ]
+257 info linkStuff zmq@2.4.0
+258 verbose linkBins zmq@2.4.0
+259 verbose linkMans zmq@2.4.0
+260 verbose rebuildBundles zmq@2.4.0
+261 info install zmq@2.4.0
+262 verbose unsafe-perm in lifecycle false
+263 error Error: spawn ENOENT
+263 error     at errnoException (child_process.js:980:11)
+263 error     at Process.ChildProcess._handle.onexit (child_process.js:771:34)
+264 error If you need help, you may report this log at:
+264 error     <http://github.com/isaacs/npm/issues>
+264 error or email it to:
+264 error     <npm-@googlegroups.com>
+265 error System Linux 3.2.0-23-generic-pae
+266 error command "/usr/bin/node" "/usr/bin/npm" "install" "zmq" "-g"
+267 error cwd /tmp/vagrant-puppet/manifests
+268 error node -v v0.10.15
+269 error npm -v 1.3.5
+270 error syscall spawn
+271 error code ENOENT
+272 error errno ENOENT
+273 verbose exit [ 1, true ]
