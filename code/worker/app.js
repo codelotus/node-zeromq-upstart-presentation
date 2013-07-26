@@ -1,19 +1,14 @@
 var zmq = require('zmq')
   , socket = zmq.socket('sub')
-  , address = 'tcp://*:5555';
+  , address = 'tcp://localhost:5560';
 
+socket.subscribe('');
 socket.on('message', function(request) {
-    console.log("received request: ", request);
+    console.log("Worker Received Request: ", request.toString());
 });
 
-socket.bind(address, function(err) {
-    if(err) {
-        console.log(err);
-    }
-    else {
-        console.log('Response Socket bound to ' + address);
-    }
-});
+socket.connect(address);
+console.log("Worker connected to: ", address);
 
 process.on('SIGINT', function() {
     socket.close();
