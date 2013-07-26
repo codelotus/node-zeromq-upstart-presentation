@@ -6,12 +6,10 @@ Class['base'] ->
 Class['nodejs']
 
 class base {
-
   # Needed to resolve misleading "mount files" error
   file { "/etc/puppet/files":
     ensure => directory,
   }
-
 }
 
 class { 'apt': 
