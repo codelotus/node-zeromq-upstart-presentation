@@ -1,8 +1,7 @@
 
 var express = require('express')
   , zmq = require('zmq')
-  , timesSocket = zmq.socket('req')
-  , divideSocket = zmq.socket('req')
+  , publish_socket = zmq.socket('pub')
   , address = 'tcp://localhost:5555';
 
 var app = express();
@@ -13,17 +12,10 @@ app.get('/message', function(req, res){
   res.send('Hello World');
 });
 
-app.post('/timesTwo', function(req, res) {
+app.post('/process', function(req, res) {
     var value = req.body.value
     console.log("Sending: ", value);
-    timesSocket.on('message', function(msg) {
-        console.log("received: ", msg.toString());
-        res.send(msg);
-    });
-    timesSocket.send(value);
-});
-
-app.post('/divideTwo', function(req, res) {
+    publish_socket.send(value);
 });
 
 app.listen(3000);
@@ -32,6 +24,5 @@ timesSocket.connect(address);
 console.log("Req timesSocket connected to: ", address);
 
 process.on('SIGINT', function() {
-  timesSocket.close();
-  divideSocket.close();
+  publish_socket.close();
 });

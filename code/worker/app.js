@@ -1,12 +1,9 @@
 var zmq = require('zmq')
-  , socket = zmq.socket('rep')
+  , socket = zmq.socket('sub')
   , address = 'tcp://*:5555';
 
 socket.on('message', function(request) {
     console.log("received request: ", request);
-    setTimeout(function() {
-        socket.send(request * 2);
-    }, 1000);
 });
 
 socket.bind(address, function(err) {
