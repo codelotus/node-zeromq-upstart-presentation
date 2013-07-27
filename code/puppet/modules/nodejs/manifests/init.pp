@@ -30,4 +30,19 @@ class nodejs {
     ensure => present,
   }
 
+  package { 'express':
+    ensure   => present,
+    provider => npm,
+    require  => Package['nodejs'],
+  }
+
+  package { 'zmq':
+    ensure   => present,
+    provider => npm,
+    require  => [
+      Package['nodejs'],
+      Package['libzmq-dev']
+    ]
+  }
+
 }

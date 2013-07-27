@@ -1,11 +1,11 @@
 
 include base
-include nodejs
 include zeromq
+include nodejs
 
 Class['base']   ->
-Class['nodejs'] ->
-Class['zeromq']
+Class['zeromq'] ->
+Class['nodejs']
 
 class base {
   # Needed to resolve misleading "mount files" error
