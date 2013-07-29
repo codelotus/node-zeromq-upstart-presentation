@@ -17,7 +17,7 @@ class zeromq {
     ensure => installed,
   }
  
-  package { 'libzmq-dev':
+  package { 'libzmq3-dev':
     ensure => installed,
   }
 
