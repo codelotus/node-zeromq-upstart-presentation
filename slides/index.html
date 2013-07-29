@@ -50,6 +50,11 @@
 				</section>
 
                 <section>
+                    <p>Nobody is really "qualified" to give tech talks.  We're all exploring and figuring it out.  Just share what you've learned.</p>
+                    - Jeremy Kahn (@jeremyckahn)
+                </section>
+
+                <section>
                     <h2>Motivation for this talk...</h2>
 				    <img width="600" height="300" src="images/letitcrash.png" alt="Let it crash">
                 </section>
@@ -233,6 +238,57 @@
         frontend.bindSync('tcp://*:5559');
         backend.bindSync('tcp://*:5560');
         // TODO: make this work....
+
+                    </code> </pre>
+                </section>
+
+
+                <section>
+                    <h1>Examples...</h1>
+                </section>
+
+                <section>
+                    <h1>Upstart</h1>
+                </section>
+
+                <section>
+                    Upstart is an event-based replacement for the /sbin/init daemon which handles starting of tasks and services during boot, stopping them during shutdown and supervising them while the system is running.
+                </section>
+
+                <section>
+                    <p>
+                    Features that make it great...
+                    </p>
+                    <ul>
+                        <li>Tasks and Services are started and stopped by events</li>
+                        <li>Events are generated as tasks and services are started and stopped</li>
+                        <li>Events may be received from any other process on the system</li>
+                        <li>Services may be respawned if they die unexpectedly</li>
+                        <li>Supervision and respawning of daemons which separate from their parent process</li>
+                        <li>Communication with the init daemon over D-Bus</li>
+                        <li>User services, which users can start and stop themselves</li>
+                    </ul>
+                </section>
+
+                <section>
+					<pre> <code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+
+description "ZeroMQ Publisher express.js app"
+
+start on pubsub_start
+stop on pubsub_stop
+
+respawn
+respawn limit 10 5
+console log
+
+env NODE_ENV=production
+env APP_HOME=/vagrant/pub_sub_proxy/frontend
+
+script 
+  export NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript
+  exec /usr/bin/node $APP_HOME/app.js
+end script
 
                     </code> </pre>
                 </section>
