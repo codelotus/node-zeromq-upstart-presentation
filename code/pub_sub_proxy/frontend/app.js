@@ -5,8 +5,10 @@ var express = require('express')
   , address = 'tcp://localhost:5559';
 
 var app = express();
+app.use(express.logger());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
+publish_socket.identity = 'frontend.' + process.pid;
 
 app.get('/message', function(req, res){
   res.send('Hello World');

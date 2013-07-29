@@ -11,23 +11,18 @@ class nodejs {
  
   package { "nodejs":
     ensure => present,
-    notify => Package['npm'],
-  }
-
-  package { "npm":
-    ensure => present,
   }
 
   package { 'express':
     ensure   => present,
     provider => npm,
-    require  => Package['npm'],
+    require  => Package['nodejs'],
   }
 
   package { 'zmq':
     ensure   => present,
     provider => npm,
-    require  => Package['npm'],
+    require  => Package['nodejs'],
   }
 
 }

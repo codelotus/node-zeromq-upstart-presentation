@@ -15,8 +15,6 @@ Class['push_pull']
 
 class base {
 
-
-
   # Needed to resolve misleading "mount files" error
   file { "/etc/puppet/files":
     ensure => directory,
@@ -39,3 +37,4 @@ class { 'apt':
   always_apt_update => true,
   disable_keys      => true,
 }
+

@@ -4,8 +4,10 @@ var zmq = require('zmq')
   , backend = zmq.socket('xpub')
   , backend_address = 'tcp://*:5560';
 
+frontend.identity = 'proxy_frontend.' + process.pid;
 frontend.bindSync(frontend_address);
 console.log("frontend connected to:", frontend_address);
+backend.identity = 'proxy_backend.' + process.pid;
 backend.bindSync(backend_address);
 console.log("backend bound to: ", backend_address);
 

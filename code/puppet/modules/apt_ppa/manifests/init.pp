@@ -14,7 +14,7 @@ class apt_ppa {
   apt::ppa { 'ppa:chris-lea/zeromq':
   }
 
-  apt::ppa { 'ppa:chris-lea/node.js-legacy':
+  apt::ppa { 'ppa:chris-lea/node.js':
   }
 
 
