@@ -224,25 +224,6 @@
                 </section>
 
                 <section>
-                    <h3>ipc Broker</h3>
-					<pre> <code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
-        var zmq = require('zmq')
-          , frontend = zmq.socket('router')
-          , backend  = zmq.socket('dealer')
-          , ipcFrontend = zmq.socket('router')
-          , ipcBackend = zmq.socket('router');
-        
-        ipcFrontend.bindSync('ipc://frontend');
-        ipcBackend.bindSync('ipc://backend');
-        
-        frontend.bindSync('tcp://*:5559');
-        backend.bindSync('tcp://*:5560');
-        // TODO: make this work....
-
-                    </code> </pre>
-                </section>
-
-                <section>
                     <h1>Examples...</h1>
                 </section>
 
@@ -284,7 +265,6 @@
                     </p>
                     <ul>
                         <li>Tasks and Services are started and stopped by events</li>
-                        <li>Events are generated as tasks and services are started and stopped</li>
                         <li>Events may be received from any other process on the system</li>
                         <li>Services may be respawned if they die unexpectedly</li>
                         <li>Supervision and respawning of daemons which separate from their parent process</li>
@@ -378,7 +358,7 @@ end script
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
