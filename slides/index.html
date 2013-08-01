@@ -34,8 +34,9 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Distributed and Fault</h1>
-                    <h1>Tollerant Node.js</h1>
+                    <h2>Distributed Fault Tolerant</h2>
+                    <h2>Development with Node,</h2>
+                    <h2>ZeroMQ, and Upstart</h2>
 					<p>
 						<small>Presented by Brian Ehmann / <a href="http://twitter.com/codelotus">@codelotus</a></small>
 					</p>
@@ -48,11 +49,6 @@
                     - Merlin Mann
 					</p>
 				</section>
-
-                <section>
-                    <p>Nobody is really "qualified" to give tech talks.  We're all exploring and figuring it out.  Just share what you've learned.</p>
-                    - Jeremy Kahn (@jeremyckahn)
-                </section>
 
                 <section>
                     <h2>Motivation for this talk...</h2>
@@ -80,14 +76,45 @@
                 </section>
 
                 <section>
-                    <p>
-                    Sockets on steroids...
-                    </p>
-                    <img width="600" height="250" src="images/boom_sockets.png" alt="Boom Sockets">
+                    <h2>But what about...</h2>
+                    <img src="images/rabbitmq.jpg" alt="RabbitMQ"></img>
                 </section>
 
                 <section>
-                    Makes complex message passing simple
+                    <img src="images/amqp-logo.png" alt="AMQP"></img>
+                </section>
+
+                <section>
+                    <h2>Apache Kafka</h2>
+                    <img src="images/apache.jpg" alt="Apache"></img>
+                </section>
+
+                <section>
+                    <img src="images/tibco.jpg" alt="Tibco"></img>
+                </section>
+
+                <section>
+                    <img src="images/webhooks.gif" alt="Web Hooks"></img>
+                </section>
+
+				<section>
+                    <h3>Distributed Fault Tolerant</h3>
+                    <h3>Development with Node,</h3>
+                    <h1>ZeroMQ,</h1>
+                    <h3>and Upstart</h3>
+				</section>
+
+                <section>
+                    <p>Nobody is really "qualified" to give tech talks.  We're all exploring and figuring it out.  Just share what you've learned.</p>
+                    - Jeremy Kahn (@jeremyckahn)
+                </section>
+
+                <section>
+                    Back to ZeroMQ
+                </section>
+
+                <section>
+                    Makes complex message passing simple - that's it...
                 </section>
 
                 <section>
@@ -148,20 +175,16 @@
       , req_socket = zmq.socket('req')
       , rep_socket = zmq.socket('rep');
     
-    exports.response = function() {
       rep_socket.bindSync('tcp://localhost:5890');
       rep_socket.on('message', function(msg){
         rep_socket.send(msg.toString() + " World!!");
       });
-    };
     
-    exports.request = function() {
       req_socket.connect('tcp://localhost:5890');
       req_socket.send('Hello');
       req_socket.on('message', function(msg) {
         console.log('msg: %s', msg.toString());
       });
-    }
                     </code> </pre>
                 </section>
 
@@ -179,20 +202,16 @@
       , sub_socket = zmq.socket('sub')
       , filter = 'pubsub';
     
-    exports.sub = function() {
       sub_socket.subscribe(filter);
       sub_socket.connect('tcp://127.0.0.1:3000');
       sub_socket.on('message', function(msg) {
         console.log('work: %s', msg.toString());
       });
-    };
     
-    exports.pub = function() {
       pub_socket.bind('tcp://127.0.0.1:3000', function() {
         pub_socket.send("pubsub work");
         pub_socket.send("bogus work");
       });
-    }
                     </code> </pre>
                 </section>
 
@@ -208,17 +227,13 @@
           , push_socket = zmq.socket('push')
           , pull_socket = zmq.socket('pull');
         
-        exports.push = function() {
           push_socket.bindSync('tcp://127.0.0.1:3000');
           push_socket.send("some work");
-        };
         
-        exports.pull = function() {
           pull_socket.connect('tcp://127.0.0.1:3000');
           pull_socket.on('message', function(msg) {
             console.log('work: %s', msg.toString());
           });
-        }
                     </code> </pre>
                 </section>
 
@@ -364,6 +379,33 @@ end script
                     </code> </pre>
                 </section>
                 
+                <section>
+                    <h2>Tips</h2>
+                    <ul>
+                        <li>socket.on('error', ...)</li>
+                    </ul>
+					<pre> <code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+socket.on('error', function(err) {
+    console.error("Socket Error: ", err);
+});
+                    </code> </pre>
+                </section>
+
+                <section>
+                    <h2>Additional Resources</h2>
+                    <ul>
+                        <li>
+                            <a href="http://zguide.zeromq.org">ZMQ Guide</a>
+                        </li>
+                        <li>
+                        <a href="http://shop.oreilly.com/product/0636920026136.do">ZMQ O'Reilly Book</a><br/>
+                        <img src="images/zmq_book.gif" alt="ZMQ Book"></img>
+                        </li>
+                        <li>
+                        <a href="https://github.com/JustinTulloss/zeromq.node/tree/master/examples">Node ZMQ module examples</a>
+                        </li>
+                    </ul>
+                </section>
 
 				<section>
 					<h1>Questions...</h1>
